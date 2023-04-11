@@ -5,17 +5,17 @@
   
 
   
-  <title>Stylized Speech Synthesis | Hexo</title>
+  <title>用 Hexo + github 从零搭建一个自己的博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的第一个博客">
+  <meta name="description" content="这是自己第二次尝试搭建博客网站，在本科的时候就进行了第一次尝试，但是由于各种环境问题和学习的原因便放弃了。如今硕士论文已交，即将毕业，闲来无事，便重新萌生了搭建博客的想法。由于在这个过程中踩了许多坑，遂记录于此。 环境准备基于Hexo的博客系统以Node.js为引擎，因此需要在自己使用的平台安装Node.js。在此，我推荐使用nvm工具来管理Node.js环境，本人的环境是windows平台，wi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stylized Speech Synthesis">
+<meta property="og:title" content="用 Hexo + github 从零搭建一个自己的博客">
 <meta property="og:url" content="http://example.com/2023/04/11/Stylized-Speech-Synthesis/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这是我的第一个博客">
+<meta property="og:description" content="这是自己第二次尝试搭建博客网站，在本科的时候就进行了第一次尝试，但是由于各种环境问题和学习的原因便放弃了。如今硕士论文已交，即将毕业，闲来无事，便重新萌生了搭建博客的想法。由于在这个过程中踩了许多坑，遂记录于此。 环境准备基于Hexo的博客系统以Node.js为引擎，因此需要在自己使用的平台安装Node.js。在此，我推荐使用nvm工具来管理Node.js环境，本人的环境是windows平台，wi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-11T05:00:44.000Z">
-<meta property="article:modified_time" content="2023-04-11T05:01:05.309Z">
+<meta property="article:modified_time" content="2023-04-11T07:38:35.890Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Stylized Speech Synthesis
+      用 Hexo + github 从零搭建一个自己的博客
     </h1>
   
 
@@ -88,7 +88,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="这是我的第一个博客"><a href="#这是我的第一个博客" class="headerlink" title="这是我的第一个博客"></a>这是我的第一个博客</h1>
+        <p>这是自己第二次尝试搭建博客网站，在本科的时候就进行了第一次尝试，但是由于各种环境问题和学习的原因便放弃了。如今硕士论文已交，即将毕业，闲来无事，便重新萌生了搭建博客的想法。由于在这个过程中踩了许多坑，遂记录于此。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>基于Hexo的博客系统以Node.js为引擎，因此需要在自己使用的平台安装Node.js。在此，我推荐使用nvm工具来管理Node.js环境，本人的环境是windows平台，window平台的<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases/download/1.1.10/nvm-setup.zip">nvm</a>工具在此获取，解压后直接安装即可。</p>
+<p>接下来就是使用nvm安装Node.js环境，常用命令如下：</p>
+<blockquote>
+<p>本人推荐使用新一点的版本，Bug会更少，在此以安装18.2.0的版本为例。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 查看已安装Node.js版本</span><br><span class="line">nvm list</span><br><span class="line"></span><br><span class="line"># 查看可安装Node.js版本</span><br><span class="line">nvm list available</span><br><span class="line"></span><br><span class="line"># 安装固定版本Node.js</span><br><span class="line">nvm install 18.2.0 64-bit</span><br><span class="line"></span><br><span class="line"># 启动某个版本Node.js</span><br><span class="line">nvm use 18.2.0</span><br><span class="line"></span><br><span class="line"># 删除某个版本Node.js</span><br><span class="line">uninstall 18.0.2</span><br></pre></td></tr></table></figure>
+
+<p>由于安装的Node.js自带npm包管理工具，下面使用npm工具安装Hexo，命令如下（这里给出详细的<a target="_blank" rel="noopener" href="https://hexo.io/docs/#Installation">安装指南</a>）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 安装</span><br><span class="line">npm install hexo</span><br><span class="line"></span><br><span class="line"># 查看hexo版本</span><br><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+
+<h2 id="建站与常用命令"><a href="#建站与常用命令" class="headerlink" title="建站与常用命令"></a>建站与常用命令</h2><p>这里是<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">建站参考</a>与<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">命令参考</a></p>
+<p>第一步：安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>第二步：生成Markdown文件，生成的Mardown文件即为写博客内容的地方，生成该文件后可以对其进行更改。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第三步：生成静态网页文件，该明令完成将Markdown解析为网页等工作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>第四部：测试博客系统，使用以下命令默认会在本地启动一个服务，打开该网址就可以看到效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在这里主要参考官方文档<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">github部署指南</a></p>
+<blockquote>
+<p>部署之前先按照上面指南建立好github仓库，另外在部署的时候可能会报错<code>ERROR Deployer not found: git</code>，则需要按照以下命令安装额外的工具再完成部署</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"></span><br><span class="line"># 部署</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>部署完成之后就可以访问自己的博客系统了。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -141,7 +171,7 @@
       <ul>
         
           <li>
-            <a href="/2023/04/11/Stylized-Speech-Synthesis/">Stylized Speech Synthesis</a>
+            <a href="/2023/04/11/Stylized-Speech-Synthesis/">用 Hexo + github 从零搭建一个自己的博客</a>
           </li>
         
           <li>
